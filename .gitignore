@@ -1,0 +1,49 @@
+# ============================================================
+# 敏感信息与运行时数据（切勿提交！）
+# ============================================================
+
+# 面板口令（含明文 token）
+panel.conf
+
+# 运行时数据目录：真实订阅链接、节点密码、核心二进制、Geo 数据库、日志、状态
+data/
+
+# 旧版单订阅链接文件（可能含真实 token）
+subscribe_url.txt
+
+# 订阅节点文件（含真实服务器地址与密码）
+**/providers/sub.yaml
+**/providers/*.yaml
+
+# 面板运行时状态（含节点服务器地址、收藏等）
+**/panel_state.json
+
+# mihomo 运行时
+**/mihomo.log
+**/*.mmdb
+**/geoip.dat
+**/geosite.dat
+**/ASN.mmdb
+**/Country.mmdb
+**/country.mmdb
+**/wintun.dll
+**/cache.db
+**/mihomo
+**/mihomo.exe
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 本地临时文件
+*.log
+*.tmp
+*.bak

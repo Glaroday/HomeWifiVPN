@@ -1,0 +1,13 @@
+[Unit]
+Description=mihomo TProxy transparent proxy rules (bypass gateway)
+Requires=mihomo.service
+After=network-online.target mihomo.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/etc/mihomo/tproxy.sh start
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

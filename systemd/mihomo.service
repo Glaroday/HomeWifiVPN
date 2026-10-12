@@ -1,0 +1,19 @@
+[Unit]
+Description=mihomo (Clash.Meta) - bypass gateway transparent proxy
+Documentation=https://wiki.metacubex.one/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/etc/mihomo/mihomo -d /etc/mihomo
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=1048576
+# TProxy + 53 端口 DNS 需要的网络能力
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

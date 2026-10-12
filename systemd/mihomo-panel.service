@@ -1,0 +1,16 @@
+[Unit]
+Description=mihomo Gateway Web Panel
+After=network-online.target mihomo.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/www/wwwroot/mihomo-gateway
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /www/wwwroot/mihomo-gateway/app/server.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

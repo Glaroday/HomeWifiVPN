@@ -1,0 +1,4 @@
+# mihomo 网关面板配置示例
+# 复制为 panel.conf 后修改；install.sh 会自动生成（含随机口令）
+port=8090
+token=请改成你自己的随机口令
